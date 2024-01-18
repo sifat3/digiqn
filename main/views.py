@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request):
+    return render(request, 'main/home.html')
+
+
+def wwd(request):
+    return render(request, 'main/whatwedo.html')
+
+
+def contactus(request):
+    return render(request, 'main/contactus.html')
