@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<br><br>
+<div class="container">
+    <div class="container">
+        <div class="card" style="width: 65rem;">
+            <div class="card-body">
+                <h5 class="card-title">PAYMENT REQUEST ID: 00{{request.id}}</h5>
+                <p class="card-text">Provider Name: {{request.sender_name}}</p>
+                <p class="card-text">Provider Email: {{request.sender_email}}</p>
+                <p class="card-text">Payer Name: {{request.receiver_name}}</p>
+                <p class="card-text">Payer Email: {{request.receiver_email}}</p>
+                <p class="card-text">Ammount: {{request.ammount}} TAKA</p>
+                <p class="card-text">Service Description: {{request.service_description}}</p>
+                {% if request.payment_done == True %}
+                <p class="card-text">Payment Status: Done</p>
+                    {% if request.service_done == True %}
+                    <p class="card-text">Service sent: Done</p>
+                    {% else %}
+                    <p class="card-text">Service sent: Pending</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="transaction_id" placeholder="TRANSACTION ID">
+                        <input type="submit" value="GOT SERVICE" class="btn btn-primary">
+                    </form>
+                    {% endif %}
+                {% else %}
+                <p class="card-text">Payment Status: Pending</p>
+                    {% if request.transaction_id %}
+                    <p class="card-text">*TRANSACTION ID SUBMITTED*</p>
+                    {% else %}
+                    <p class="card-text">Please PAY via Bkash - Personal: 01962008349</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" name="transaction_id" placeholder="TRANSACTION ID">
+                        <input type="submit" value="MARK AS PAID" class="btn btn-primary">
+                    </form>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

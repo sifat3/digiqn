@@ -81,6 +81,15 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# settings.py
+
+EMAIL_HOST = 'your-smtp-server.com'
+EMAIL_PORT = 587  # or the appropriate port for your SMTP server
+EMAIL_USE_TLS = True  # Set to True if your SMTP server requires TLS
+
+EMAIL_HOST_USER = 'your-smtp-username'
+EMAIL_HOST_PASSWORD = 'your-smtp-password'
 
 
 # Password validation
