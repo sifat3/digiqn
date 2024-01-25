@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% if user.is_superuser %}
+<br>
+<div class="container">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <p>Payment Got of ID:</p>
+            <input type="number" name='id'>
+            <input type="submit" class="btn btn-success">
+        </form>
+    </div>
+</div>
+<br>
+{% for request in requests %}
+<div class="container">
+    <div class="container">
+        <div class="card" style="width: 65rem;">
+            <div class="card-body">
+                <h5 class="card-title">PAYMENT REQUEST ID: {{request.id}}</h5>
+                <p class="card-text">Provider Name: {{request.sender_name}}</p>
+                <p class="card-text">Provider Email: {{request.sender_email}}</p>
+                <p class="card-text">Payer Name: {{request.receiver_name}}</p>
+                <p class="card-text">Payer Email: {{request.receiver_email}}</p>
+                <p class="card-text">Ammount: {{request.ammount}} TAKA</p>
+                <p class="card-text">Service Description: {{request.service_description}}</p>
+                <p class="card-text">Payment: {{request.payment_done}}</p>
+                <p class="card-text">Service: {{request.service_done}}</p>
+            </div>
+        </div>
+    </div>
+</div><br>
+{% endfor %}
+{% endif %}
+{% endblock %}

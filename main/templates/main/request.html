@@ -6,7 +6,7 @@
     <div class="container">
         <div class="card" style="width: 65rem;">
             <div class="card-body">
-                <h5 class="card-title">PAYMENT REQUEST ID: 00{{request.id}}</h5>
+                <h5 class="card-title">PAYMENT REQUEST ID: {{request.id}}</h5>
                 <p class="card-text">Provider Name: {{request.sender_name}}</p>
                 <p class="card-text">Provider Email: {{request.sender_email}}</p>
                 <p class="card-text">Payer Name: {{request.receiver_name}}</p>
@@ -22,7 +22,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <input type="hidden" name="transaction_id" placeholder="TRANSACTION ID">
-                        <input type="submit" value="GOT SERVICE" class="btn btn-primary">
+                        <input type="submit" value="GOT SERVICE" class="btn btn-success">
                     </form>
                     {% endif %}
                 {% else %}
@@ -34,7 +34,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <input type="text" name="transaction_id" placeholder="TRANSACTION ID">
-                        <input type="submit" value="MARK AS PAID" class="btn btn-primary">
+                        <input type="submit" value="MARK AS PAID" class="btn btn-success">
                     </form>
                     {% endif %}
                 {% endif %}

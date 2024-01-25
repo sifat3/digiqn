@@ -1,5 +1,45 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<h1>HELLO</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4>Create Your Payment Request</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" class="form-control" required name="sender_name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Your Email:</label>
+                            <input type="email" class="form-control" required  name="sender_email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Receiver Name:</label>
+                            <input type="text" class="form-control" required name="receiver_name" placeholder="Enter receiver name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Receiver Email:</label>
+                            <input type="email" class="form-control" required name="receiver_email" placeholder="Enter receiver email">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Ammount:</label>
+                            <input type="number" class="form-control" required name="ammount" placeholder="Enter collection ammount">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Service Description:</label>
+                            <input type="text" class="form-control" required name="service_description" placeholder="Brief Description">
+                        </div>
+                        <br><button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
