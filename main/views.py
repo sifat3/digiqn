@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from .models import *
 <<<<<<< HEAD
 from django.core.mail import send_mail
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from .forms import UserForm, UserProfileForm
 =======
 >>>>>>> parent of 8980747 (4th edit)
+=======
+>>>>>>> parent of b457f18 (5th edit)
 
 
-@login_required(login_url='user_login')
 def home(request):
     return render(request, 'main/home.html')
 
@@ -52,6 +54,7 @@ def admin_area(request):
         'requests': requests
     }
     return render(request, 'main/admin.html', context)
+<<<<<<< HEAD
 
 
 def signup(request):
@@ -95,3 +98,5 @@ def user_login(request):
         return render(request, 'main/login.html', {})
 =======
 >>>>>>> parent of 8980747 (4th edit)
+=======
+>>>>>>> parent of b457f18 (5th edit)

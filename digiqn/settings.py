@@ -92,12 +92,16 @@ EMAIL_USE_TLS = True  # Set to True if your SMTP server requires TLS
 EMAIL_HOST_USER = 'digiqnfinance@gmail.com'
 EMAIL_HOST_PASSWORD = 'mzhu yfxy hppx bchz'
 
+<<<<<<< HEAD
 AUTH_USER_MODEL = 'main.CustomUser'
 =======
 EMAIL_HOST_USER = 'your-smtp-username'
 EMAIL_HOST_PASSWORD = 'your-smtp-password'
 
 >>>>>>> parent of 8980747 (4th edit)
+=======
+
+>>>>>>> parent of b457f18 (5th edit)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
