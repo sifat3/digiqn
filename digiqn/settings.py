@@ -84,14 +84,20 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # settings.py
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'your-smtp-server.com'
 EMAIL_PORT = 587  # or the appropriate port for your SMTP server
 EMAIL_USE_TLS = True  # Set to True if your SMTP server requires TLS
 
+<<<<<<< HEAD
 EMAIL_HOST_USER = 'digiqnfinance@gmail.com'
 EMAIL_HOST_PASSWORD = 'mzhu yfxy hppx bchz'
 
 AUTH_USER_MODEL = 'main.CustomUser'
+=======
+EMAIL_HOST_USER = 'your-smtp-username'
+EMAIL_HOST_PASSWORD = 'your-smtp-password'
+
+>>>>>>> parent of 8980747 (4th edit)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
