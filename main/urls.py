@@ -6,5 +6,7 @@ urlpatterns = [
     path('what_we_do/', views.wwd, name='what we do'),
     path('contact/', views.contactus, name='contact'),
     path('request/<int:pk>', views.request_page, name='request'),
-    path('admin-area', views.admin_area, name='admin_area')
+    path('admin-area', views.admin_area, name='admin_area'),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.user_login, name='login'),
 ]
